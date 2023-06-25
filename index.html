@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <title>RFL Ultimate Team - Cards</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    #header {
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin: 0;
+    }
+
+    #player-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1200px;
+      gap: 30px;
+      margin: 0 auto;
+      padding: 30px;
+    }
+
+    .player-card {
+      background-color: #333;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 15px 15px 15px rgba(0, 0, 0);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .player-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .player-image {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  margin: 0;
+  display: inline-block;
+}
+
+  .checkbox-container input[type="checkbox"]:checked {
+    background-color: #fff;
+  }
+
+  .checkbox-container input[type="checkbox"]:checked + label::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 14px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+    }
+    @keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="header">
+    <h1>RFL Ultimate Team Cards</h1>
+  </div>
+
+  <div class="checkbox-container">
+    <input type="checkbox" id="bronzeCheckbox" onclick="filterPlayers()" checked>
+    <label for="bronzeCheckbox">Bronze</label>
+  </div>
+  <div class="checkbox-container">
+    <input type="checkbox" id="silverCheckbox" onclick="filterPlayers()" checked>
+    <label for="silverCheckbox">Silver</label>
+  </div>
+  <div class="checkbox-container">
+    <input type="checkbox" id="goldCheckbox" onclick="filterPlayers()" checked>
+    <label for="goldCheckbox">Gold</label>
+  </div>
+  <div class="checkbox-container">
+    <input type="checkbox" id="otherCheckbox" onclick="filterPlayers()" checked>
+    <label for="otherCheckbox">Other</label>
+  </div>
+</div>
+
+  <div id="player-grid">
+    <div class="player-card">
+      <img class="player-image" src="https://cdn.discordapp.com/attachments/1122292199380496445/1122561476977242202/image-removebg-preview.png" alt="Player 1"id="other">
+    </div>
+
+    <div class="player-card">
+      <img class="player-image" src="https://cdn.discordapp.com/attachments/1122292199380496445/1122549759585034250/BREXIT_BARRY.png" alt="Player 2"id="other">
+    </div>
+
+    <div class="player-card">
+      <img class="player-image" src="https://cdn.discordapp.com/attachments/1122308608005255188/1122590602794635294/FOOTBALLMAD116_1.png" alt="Player 3"id="other">
+    </div>
+
+    <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122308608005255188/1122587207920783431/Zrzut_ekranu__1715_-removebg-preview.png" alt="Player 3"id="other">
+      </div>
+
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122306855264342137/IROWC_Owner_4.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122524781091225641/image-removebg-preview_11.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122526344497090580/image-removebg-preview_10.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122545160333578311/image-removebg-preview_12.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122558490406293565/image-removebg-preview_15.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122563600666595378/image-removebg-preview.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122293050513821757/1122578327845216306/image-removebg-preview.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122302324765900851/1122521296371187772/image-removebg-preview_10.png" alt="Player 3" id="silver">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122606918708510780/1122606965873442817/NE0VENAT0R.png" alt="Player 3" id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122606918708510780/1122607049658876115/SteffDaBeast123_2.png" alt="Player 3"id="gold">
+      </div>
+      <div class="player-card">
+        <img class="player-image" src="https://cdn.discordapp.com/attachments/1122606918708510780/1122607050594197627/DXRK_1.png" alt="Player 3"id="gold">
+      </div>
+  </div>
+</body>
+
+<script>
+document.getElementById("bronzeCheckbox").checked = true;
+document.getElementById("silverCheckbox").checked = true;
+document.getElementById("goldCheckbox").checked = true;
+document.getElementById("otherCheckbox").checked = true;
+
+function filterPlayers() {
+  // Get the checked status of each checkbox
+  var bronzeChecked = document.getElementById("bronzeCheckbox").checked;
+  var silverChecked = document.getElementById("silverCheckbox").checked;
+  var goldChecked = document.getElementById("goldCheckbox").checked;
+  var otherChecked = document.getElementById("otherCheckbox").checked;
+
+  // Get all player cards
+  var playerCards = document.getElementsByClassName("player-card");
+
+  // Loop through the player cards
+  for (var i = 0; i < playerCards.length; i++) {
+    var playerCard = playerCards[i];
+    var playerImage = playerCard.querySelector(".player-image");
+    var playerID = playerImage.id;
+
+    // Check if the player card matches the selected tags
+    if (
+      (bronzeChecked && playerID.includes("bronze")) ||
+      (silverChecked && playerID.includes("silver")) ||
+      (goldChecked && playerID.includes("gold")) ||
+      (otherChecked && playerID.includes("other"))
+    ) {
+      // Display the player card
+      playerCard.style.display = "block";
+      playerCard.style.animation = ""; // Clear any previous fade-out animation
+    } else {
+      // Apply the fade-out animation
+      playerCard.style.animation = "fadeOut 0.5s forwards";
+    }
+  }
+}
+
+
+  </script>
+  
+  
+</html>
